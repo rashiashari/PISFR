@@ -1,0 +1,21 @@
+Jul 27, 2018 1:38:11 AM pisfr_UI.Register$captureImage run
+WARNING: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+	at org.bytedeco.javacv.OpenCVFrameGrabber.grab(OpenCVFrameGrabber.java:251)
+	at pisfr_UI.Register$captureImage.run(Register.java:477)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jul 27, 2018 1:40:50 PM pisfr_UI.Register$captureImage run
+WARNING: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+	at org.bytedeco.javacv.OpenCVFrameGrabber.grab(OpenCVFrameGrabber.java:251)
+	at pisfr_UI.Register$captureImage.run(Register.java:477)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jul 28, 2018 12:15:00 PM pisfr_UI.Register$captureImage run
+WARNING: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+org.bytedeco.javacv.FrameGrabber$Exception: retrieve() Error: Could not retrieve frame. (Has start() been called?)
+	at org.bytedeco.javacv.OpenCVFrameGrabber.grab(OpenCVFrameGrabber.java:251)
+	at pisfr_UI.Register$captureImage.run(Register.java:477)
+	at java.lang.Thread.run(Thread.java:745)
+
