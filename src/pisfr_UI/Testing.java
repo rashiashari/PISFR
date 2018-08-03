@@ -28,6 +28,7 @@ import pisfr_DL.DoctorDataBase;
  *
  * @author Rashini_Ashari
  */
+//Test
 public class Testing extends javax.swing.JFrame {
 private static final Logger logger = Logger.getLogger(Testing.class.getName());
     FileHandler fhandler;
