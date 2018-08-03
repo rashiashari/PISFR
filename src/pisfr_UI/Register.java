@@ -53,6 +53,8 @@ public class Register extends javax.swing.JFrame {
     BufferedImage bImg,captured,result;
     BufferedImage histImg,custImage[];
     static int i,docid,noi;
+
+  
     
     //public Register() {
      //   initComponents();
@@ -135,7 +137,7 @@ public class Register extends javax.swing.JFrame {
 
         labelNoimages.setText("No.of Images - ");
 
-        jLabel7.setText("Capture 5 images from the user");
+        jLabel7.setText("Capture 10 images from the user");
 
         jLabel.setText("Name");
 
@@ -349,14 +351,14 @@ public class Register extends javax.swing.JFrame {
  noi=noi+1;//count of images
         try
         {
-            if(noi<6)
+            if(noi<11)
             {
                 
                 /*File output=new File(".\\trainingset\\"+uid+"_"+noi+".jpg");
                 ImageIO.write(histImg,"jpg",output);
                 writeId(uid);//method to write the labels
                 labelNoimages.setText("No.of Images - "+noi);*/
-                if(noi<=3)
+                if(noi<=7)
                 {
                         File output=new File("C:\\PISFC\\Training\\"+docid+"_"+noi+".jpg");
                     ImageIO.write(histImg,"jpg",output);
@@ -370,7 +372,7 @@ public class Register extends javax.swing.JFrame {
                     writeId(docid);//method to write the labels
                     labelNoimages.setText("No.of Images - "+noi);
                 }
-                if(noi==5)
+                if(noi==10)
                     JOptionPane.showMessageDialog(rootPane,"Training images Added","Added",JOptionPane.INFORMATION_MESSAGE);
                 //i++;
             }
@@ -417,7 +419,7 @@ public class Register extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Enter valid mobile no","ERROR",JOptionPane.ERROR_MESSAGE);
         }
        
-        else if(noi<5)
+        else if(noi<10)
         {
             JOptionPane.showMessageDialog(rootPane,"Capture images and add","ERROR",JOptionPane.ERROR_MESSAGE);
         }
@@ -459,7 +461,9 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_btnsaveActionPerformed
 
     private void btnnextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnextActionPerformed
-       
+new Testing().setVisible(true);
+
+        this.dispose();       
     }//GEN-LAST:event_btnnextActionPerformed
  class captureImage implements Runnable{
         protected volatile boolean runn = false;

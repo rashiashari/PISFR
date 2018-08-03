@@ -96,7 +96,21 @@ public class DoctorDataBase {
         }
         return rs;
     }
-    
+        public ResultSet getLoginDetails(Doctors obj)
+    {
+        ResultSet rs=null;
+        try
+        {
+            String SQL="select*from doctordetails where ID="+obj.getID()+" and Doc_SCode="+obj.getSecretCode()+"";
+            DB mycon=new DB();
+            rs=mycon.getValues(SQL);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        return rs;
+    }
     public DefaultTableModel doctorTable()
     {
         DefaultTableModel objtable=new DefaultTableModel();

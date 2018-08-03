@@ -52,7 +52,7 @@ public class NeuralNetwor {
         }
     };
     static DataSet TSet=new DataSet(80,2);//Input size and output size of dataset in hhere out put size is the number of the doctors
-        //DataSet(80,2);
+        //DataSet(70,2);
     /**
      * This method creates the training set
      * @param outputSize the size of the output(the number of doctors)
@@ -74,14 +74,14 @@ public class NeuralNetwor {
                 {
                     image = ImageIO.read(f);
                     image_Name = f.getName();//name of the image
-                    image_Id = image_Name.substring(0, 1);//id of the image by getting the first letter of the image
+                    image_Id = image_Name.substring(0, 2);//id of the image by getting the first two letters of the image
                     id = Integer.parseInt(image_Id);
                     
                     double[]output=new double[outputSize];
                     Arrays.fill(output,0);
                     output[id-1]=1;
                     
-                    double []input=new double[85];
+                    double []input=new double[80];
                     input=featureex.getFeature(image);
                     trainingSet.addRow(new DataSetRow(input,output));
                     System.out.println((output.length));
@@ -94,9 +94,9 @@ public class NeuralNetwor {
                 }
             }
         }
-                trainingSet.saveAsTxt("trainingSet.txt",",");
+                trainingSet.saveAsTxt("Trainingset1.txt",",");
                 trainingSet.normalize(new DecimalScaleNormalizer());
-                trainingSet.saveAsTxt("trainingdataSet.txt",",");
+                trainingSet.saveAsTxt("Trainingset2.txt",",");
                 TSet=trainingSet;
         }
         catch(Exception ex)
@@ -114,7 +114,7 @@ public class NeuralNetwor {
         DataSet trainingSet;
         try
         {
-            File file=new File("C:\\PISFC\\trainingdataSet.txt");    
+            File file=new File("C:\\PISFC\\Trainingset2.txt");    
             if(!file.exists())
             {                    
                 JOptionPane.showMessageDialog(null,"Can not find the dataset","ERROR",
@@ -122,7 +122,7 @@ public class NeuralNetwor {
             }
             else
             {
-                trainingSet=TrainingSetImport.importFromFile("C:\\PISFC\\trainingdataSet.txt",80,outputSize,",");
+                trainingSet=TrainingSetImport.importFromFile("C:\\PISFC\\Trainingset2.txt",80,outputSize,",");
                 if(trainingSet.getOutputSize()!=outputSize)
                 {
                     JOptionPane.showMessageDialog(null,"Output sizes dont match create/load dataset first","ERROR",
@@ -171,10 +171,10 @@ public class NeuralNetwor {
         int high=0,id = 0,size=0;
         try
         {
-            newData=TrainingSetImport.importFromFile("C:\\PISFC\\trainingSet.txt",80,outputsize,",");
+            newData=TrainingSetImport.importFromFile("C:\\PISFC\\Trainingset1.txt",80,outputsize,",");
             newData.addRow(new DataSetRow(testImage,output));
             newData.normalize(new DecimalScaleNormalizer());
-            newData.saveAsTxt("trainingSetNEWW.txt",",");
+            newData.saveAsTxt("NewTrainingset.txt",",");
             size=newData.size();
             DataSetRow inputRow=newData.getRowAt(size-1);
             input=inputRow.getInput();
@@ -227,10 +227,10 @@ public class NeuralNetwor {
         int high=0,id = 0,size=0;
         try
         {
-            newData=TrainingSetImport.importFromFile("C:\\PISFC\\trainingSet.txt",80,outputsize,",");
+            newData=TrainingSetImport.importFromFile("C:\\PISFC\\Trainingset1.txt",80,outputsize,",");
             newData.addRow(new DataSetRow(testImage,output));
             newData.normalize(new DecimalScaleNormalizer());
-            newData.saveAsTxt("trainingSetNEWW.txt",",");
+            newData.saveAsTxt("NewTrainingset.txt",",");
             size=newData.size();
             DataSetRow inputRow=newData.getRowAt(size-1);
             input=inputRow.getInput();
@@ -275,7 +275,7 @@ public class NeuralNetwor {
         }
     }
 
-private static final Logger logger = Logger.getLogger(NeuralNetwork.class.getName());
+private static final Logger logger = Logger.getLogger(NeuralNetwor.class.getName());
     FileHandler fhandler;
     public static void main(String[] args) {
         String x[]=trainNetwork(2,10,0.2,0.7);//outputsize,hiddenlayers,iteration rate,momentum
