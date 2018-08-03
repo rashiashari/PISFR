@@ -205,7 +205,7 @@ private static final Logger logger = Logger.getLogger(Testing.class.getName());
 
             BufferedImage test=ImageIO.read(file);
             imgname=file.getName();
-            imgid=imgname.substring(0, 2); 
+            imgid=imgname.substring(0, 1); 
             feature=gf.getFeature(test);
             id=obj.testingFaces(feature, output);
             imgnid=String.valueOf(id);

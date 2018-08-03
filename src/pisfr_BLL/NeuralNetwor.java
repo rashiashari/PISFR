@@ -74,7 +74,7 @@ public class NeuralNetwor {
                 {
                     image = ImageIO.read(f);
                     image_Name = f.getName();//name of the image
-                    image_Id = image_Name.substring(0, 2);//id of the image by getting the first two letters of the image
+                    image_Id = image_Name.substring(0, 1);//id of the image by getting the first two letters of the image
                     id = Integer.parseInt(image_Id);
                     
                     double[]output=new double[outputSize];

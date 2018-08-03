@@ -6,6 +6,9 @@
 package pisfr_BLL;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -42,15 +45,20 @@ public class DetectingTest {
      * Test of detectFace method, of class Detecting.
      */
     @Test
-    public void testDetectFace() {
+    public void testDetectFace() throws IOException {
         System.out.println("detectFace");
-        BufferedImage imgfile = null;
+        File file = new File("C:\\PISFC\\TestImg\\1_8.jpg");
+        BufferedImage imgfile=ImageIO.read(file);
         Detecting instance = new Detecting();
-        BufferedImage expResult = null;
+        int expResult = 1;
+        int x=0;
+       
         BufferedImage result = instance.detectFace(imgfile);
-        assertEquals(expResult, result);
+        if(result!=null)
+            x=1;
+        assertEquals(expResult, x);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }
